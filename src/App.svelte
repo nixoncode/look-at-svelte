@@ -71,4 +71,6 @@
 
 {#if count > 5}
     <p>{count} is greater than 5</p>
+{:else }
+    <p>{count} is less than 5</p>
 {/if}
