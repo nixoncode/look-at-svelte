@@ -3,6 +3,7 @@
     import Nested from "./lib/Nested.svelte";
     import PackageInfo from "./lib/PackageInfo.svelte";
     import Thing from "./lib/Thing.svelte";
+    import {getRandomNumber} from "./lib/utils.js";
 
     let name = "Svelte";
     let stringWithHTML = `This string contains some <strong>HTML!!!</strong>`;
@@ -56,6 +57,9 @@
     function removeThing() {
         things = things.slice(1);
     }
+
+    let promiseNumber = getRandomNumber();
+
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
@@ -104,3 +108,12 @@
 {#each things as thing (thing.id)}
     <Thing name="{thing.name}"/>
 {/each}
+
+
+{#await promiseNumber}
+    <p>...waiting</p>
+{:then number}
+    <p>The number is {number}</p>
+{:catch error}
+    <p style="color: red">{error.message}</p>
+{/await}
