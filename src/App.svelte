@@ -1,5 +1,7 @@
 <script>
+    import src from "./assets/svelte.svg";
+
     let name = "Svelte";
 </script>
 
-<h1>Hello {name.toUpperCase()}!</h1>
+<img src={src} alt="world of {name}">
