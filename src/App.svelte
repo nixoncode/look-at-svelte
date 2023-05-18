@@ -1,5 +1,6 @@
 <script>
     import src from "./assets/svelte.svg";
+    import Nested from "./lib/Nested.svelte";
 
     let name = "Svelte";
 </script>
@@ -15,3 +16,5 @@
         font-size: 2em;
     }
 </style>
+
+<Nested/>
