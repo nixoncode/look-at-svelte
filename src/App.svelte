@@ -56,3 +56,5 @@
 <p>{ numbers.join(" + ") } =?</p>
 <button on:click={addNumber}>Add a number</button>
 <p>the sum is {numbersObj.sum}</p>
+
+<Nested answer={42}/>
