@@ -40,6 +40,9 @@
         version: 3,
         website: "https://svelte.dev",
     };
+
+    const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+    let selectedColor = colors[0];
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
@@ -76,3 +79,10 @@
 {:else }
     <p>{count} is less than 5</p>
 {/if}
+
+<h1 style="color: {selectedColor}">Pick a color</h1>
+<div>
+    {#each colors as color, i}
+        <button on:click={() => selectedColor = color}>{i + 1}. {color}</button>
+    {/each}
+</div>
