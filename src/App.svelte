@@ -1,6 +1,7 @@
 <script>
     import src from "./assets/svelte.svg";
     import Nested from "./lib/Nested.svelte";
+    import PackageInfo from "./lib/PackageInfo.svelte";
 
     let name = "Svelte";
     let stringWithHTML = `This string contains some <strong>HTML!!!</strong>`;
@@ -32,6 +33,13 @@
     }
 
     let numbersObj = {sum: 0};
+
+    const pkg = {
+        name: "Svelte",
+        speed: "blazing",
+        version: 3,
+        website: "https://svelte.dev",
+    };
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
@@ -58,3 +66,5 @@
 <p>the sum is {numbersObj.sum}</p>
 
 <Nested answer={42}/>
+
+<PackageInfo {...pkg}/>
