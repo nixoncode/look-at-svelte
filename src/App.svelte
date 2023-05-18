@@ -3,7 +3,14 @@
     import Nested from "./lib/Nested.svelte";
 
     let name = "Svelte";
-    let stringWithHTML = `This string contains some <strong>HTML!!!</strong>`
+    let stringWithHTML = `This string contains some <strong>HTML!!!</strong>`;
+
+    let count = 0;
+
+    function increment() {
+        count++;
+    }
+
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
@@ -21,3 +28,4 @@
 <Nested/>
 
 <p>{@html stringWithHTML}</p>
+<button on:click={increment}>Clicked {count} {count === 1 ? "time" : "times"}</button>
