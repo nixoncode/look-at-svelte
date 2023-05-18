@@ -68,3 +68,7 @@
 <Nested answer={42}/>
 
 <PackageInfo {...pkg}/>
+
+{#if count > 5}
+    <p>{count} is greater than 5</p>
+{/if}
