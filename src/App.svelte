@@ -12,6 +12,17 @@
     }
 
     $: doubled = count * 2;
+
+    $: console.log(`the count is ${count}`);
+
+    $: {
+        console.log(`the count is ${count}`);
+        console.log("this will also run whenever count changes");
+    }
+    $:if (count > 10) {
+        alert("The count is dangerously high!");
+        count = 0;
+    }
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
