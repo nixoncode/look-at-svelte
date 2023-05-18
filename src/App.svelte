@@ -11,6 +11,7 @@
         count++;
     }
 
+    $: doubled = count * 2;
 </script>
 <h1>Hello {name.toUpperCase()}!</h1>
 <img src={src} alt="world of {name}">
@@ -29,3 +30,5 @@
 
 <p>{@html stringWithHTML}</p>
 <button on:click={increment}>Clicked {count} {count === 1 ? "time" : "times"}</button>
+
+<p>{count} doubled is {doubled}</p>
